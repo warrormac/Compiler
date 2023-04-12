@@ -1,0 +1,128 @@
+#Alumno:    andre alvarez cardenas
+#Codigo:    choco python
+#Version:   1.0
+
+"""
+Codigo creado para el curso de compiladores
+"""
+'''
+En el siguiente apartado se hara una serie de pruebas
+'''
+
+#Probando Operadores Matematicos de forma lineal
++-*/%
+
+#Probando Operadores Matematicos de forma horizontal
++
+-
+*
+/
+//
+,
+.
+->
+
+#Probando Operadore de comparacion simples y compuestos lineal mente
+< > <= >= !=
+
+#Probando Operador asignacion
+=
+
+#Probando Palabras claves
+for if else print in list range except finally assert async await break continue elif import in is nonlocal pass raise return try while with yild
+
+#probando Valores de Boleanos
+false true as 
+
+#probando Operaciones de Boleanos
+and or not
+
+#Probando Delimitadores
+() {} []
+
+#Probando Variables simples
+var variable varcito 
+
+#Probando Variable compuesta
+var01 var_01 lambda 
+
+#probando Numero
+123 002 1234 3213
+
+#probando Asignaciones
+var = 123
+var_01 = "hola mundo"
+
+#probando if
+if 5 == 5 { var = 5}
+
+#probando if - else
+if 5 == 5 { 
+    var = 5
+}else{
+    var = 10
+}
+
+#probando for 
+for i in range(6){
+    print(5)
+}
+
+#Probando Lista Vacia
+var = []
+
+#Probando Lista Llena
+var = ["a" 'b' 'c' 2]
+
+###############################################################
+#Probando Pruebas del Doc
+
+# Prueba escáner
+
+# 2147483647 is the maximum unsigned integer
+1234567890
+2147483648 # too big by 1
+99999999999999999 - x # error
+-198797
+x = 123 + 123456789
+
+###############################################################
+'''Este es un bloque con strings'''
+"What the #&*%!"
+'Don\''t forget'
+# y con booleanos 
+"andre alvarez"
+false
+true
+
+###############################################################
+# ids and reserved
+
+thisisanunusuallylongidentifierbutitislegal
+fortrue
+for true
+print read if in
+red else
+x10 int string boolean
+temp_1
+v@r
+and or not
+
+#####################################################
+"""operators"""
+{}[]()
+1 > 0
+1 <= 10
+i1=10;
+i2=20
+s= "Hello"
+b1 =true
+b2 = False
+i1 ++ i2
+temp=(s=='Hello')
+print(1+2-3*4/5)
+var = "andre"
+
+#EOF
+$
+$$
