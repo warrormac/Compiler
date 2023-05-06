@@ -14,11 +14,18 @@ tokens_e = []
 #Funciones para identificar los tokens y palabras claves
 
 #Para identificar operadores
-def IntOp(char): 
-    intop = ['+', '-', '*', '/']
-    if(char in intop):
+def IntOp(char):
+    intop = ['+', '*', '/']
+    if char == '-':
+        # Check if it is a subtraction or an arrow
+        if codigo[iter:iter+2] == '->':
+            return False
+        else:
+            return True
+    elif char in intop:
         return True
-    return False
+    else:
+        return False
 
 #Para identificar asignacion
 def AsigOp(char):
@@ -29,11 +36,30 @@ def AsigOp(char):
 
 #Para identificar operadores de comparacion
 def CompOp(string):
-    comop = ['!','==', '!=', '<', '>', '<=', ">=","//","%",",",":",".","->"]
-    if(string in comop):
+    comop = ['!','==', '!=', '<', '>', '<=', ">=","//","%",",",":","."]
+    if codigo[iter:iter+2] == "->":
+        return True
+    elif string in comop:
+        return True
+    else:
+        return False
+
+#Para identificar asignacion
+def AsigOp(char):
+    asigop = ['=']
+    if(char in asigop):
         return True
     return False
 
+#Para identificar operadores de comparacion
+def CompOp(string):
+    comop = ['!','==', '!=', '<', '>', '<=', ">=","//","%",",",":","."]
+    if codigo[iter:iter+2] == "->":
+        return True
+    elif string in comop:
+        return True
+    else:
+        return False
 #Para identificar palabras claves
 def WordKeys(string):
     wordkeys = ['for', 'if', 'else', 'in', 'list','range','as', 'assert','async','await','break','class','continue','def','del','elif','except','finally','from','global','import','is','lambda','nonlocal','pass','raise','return','try','while','with','yild']
@@ -82,19 +108,32 @@ def Id():
     string_id = ""
     while codigo[iter] in id:
         string_id += codigo[iter]
-        iter +=1
-        iter_c +=1
+        iter += 1
+        iter_c += 1
     return string_id
+
 
 def Number():
     global iter
     global iter_c
     number = "0123456789"
     string_number = ""
-    while codigo[iter] in number:
-        string_number += codigo[iter]
-        iter +=1
-        iter_c +=1
+
+    if codigo[iter] == '0' and codigo[iter + 1] in number:
+        while codigo[iter] == '0':
+            iter += 1
+            iter_c += 1
+
+        while codigo[iter] in number:
+            string_number += codigo[iter]
+            iter += 1
+            iter_c += 1
+    else:
+        while codigo[iter] in number:
+            string_number += codigo[iter]
+            iter += 1
+            iter_c += 1
+    
     return string_number
     
 def Literal(letter):
